@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapApp - Google Maps Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map{
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search for places...">
+                <button id="search-button">Search</button>
+            </div>
+            <div class="user-controls">
+                <button id="directions-button">Directions</button>
+                <button id="my-location-button">My Location</button>
+            </div>
+        </header>
+        
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Search Results</h3>
+                    <button id="close-sidebar">×</button>
+                </div>
+                <div class="sidebar-content" id="search-results"></div>
+            </div>
+        </div>
+        
+        <div class="directions-panel" id="directions-panel">
+            <div class="directions-header">
+                <h3>Directions</h3>
+                <button id="close-directions">×</button>
+            </div>
+            <div class="directions-form">
+                <input type="text" id="origin-input" placeholder="Starting point">
+                <input type="text" id="destination-input" placeholder="Destination">
+                <select id="travel-mode">
+                    <option value="driving">Driving</option>
+                    <option value="walking">Walking</option>
+                    <option value="bicycling">Bicycling</option>
+                </select>
+                <button id="get-directions">Get Directions</button>
+            </div>
+            <div class="directions-results" id="directions-results"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    
+    <script>
+        function initMap() {
+          const options = {
+            zoom: 8,
+            center: { lat: 28.7041, lng: 77.1025 }
+          };
+          new google.maps.Map(document.getElementById("map"), options);
+        }
+      </script>
+      
+<!-- Load Google Maps API -->
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8S8jnJu0lMNy8fMS4zT-vwOYGwNniRQI&callback=initMap&v=weekly">
+    </script>
+    <div id="map"></div>
+    <script>
+        function initmap() {
+            var options = {
+                zoom:8,
+                center:{lat:28.6304, lng:-77.2177}
+            }
+            var map = new google.maps.Map(document.getElementById('map'), options);
+        }
+    </script>
+</body>
+</html>
