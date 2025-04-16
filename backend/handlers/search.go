@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
@@ -13,7 +14,7 @@ type SearchResult struct {
 	Category string  `json:"category"`
 }
 
-func searchHandler(w http.ResponseWriter, r *http.Request) {
+func SearchHandler(w http.ResponseWriter, r *http.Request) {
 	// query := r.URL.Query().Get("q")
 	// lat := r.URL.Query().Get("lat")
 
@@ -40,4 +41,5 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(results)
+	fmt.Fprint(w, results);
 }

@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"mapapp/handlers"
 )
 
 func main() {
@@ -15,6 +16,7 @@ func main() {
 	// API routes
 	http.HandleFunc("/api/search", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Search endpoint working")
+		handlers.SearchHandler(w, r)
 	})
 	http.HandleFunc("/api/geocode", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Geocode endpoint working")

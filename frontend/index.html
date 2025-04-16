@@ -6,12 +6,6 @@
     <title>MapApp - Google Maps Clone</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <style>
-        #map{
-            height: 400px;
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
     <div class="app-container">
@@ -56,31 +50,7 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="app.js"></script>
-    
-    <script>
-        function initMap() {
-          const options = {
-            zoom: 8,
-            center: { lat: 28.7041, lng: 77.1025 }
-          };
-          new google.maps.Map(document.getElementById("map"), options);
-        }
-      </script>
-      
-<!-- Load Google Maps API -->
-    <script async
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8S8jnJu0lMNy8fMS4zT-vwOYGwNniRQI&callback=initMap&v=weekly">
-    </script>
-    <div id="map"></div>
-    <script>
-        function initmap() {
-            var options = {
-                zoom:8,
-                center:{lat:28.6304, lng:-77.2177}
-            }
-            var map = new google.maps.Map(document.getElementById('map'), options);
-        }
-    </script>
 </body>
 </html>
